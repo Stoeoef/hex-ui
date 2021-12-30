@@ -1,7 +1,6 @@
 [package]
-name = "eframe_template"
+name = "hex-ui"
 version = "0.1.0"
-authors = ["Emil Ernerfeldt <emil.ernerfeldt@gmail.com>"]
 edition = "2021"
 rust-version = "1.56"
 
@@ -12,8 +11,12 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 eframe = "0.16.0" # Gives us egui, epi and web+native backends
-
+hexgame = { path = "../hexgame"}
+mcts = { path = "../mcts/mcts"}
+hexgame_ai = { path = "../mcts/hexgame_ai"}
 serde = { version = "1", features = ["derive"], optional = true }
+rand = { version = "0.8.4", features = ["small_rng"] }
+web-sys = "*"
 
 [features]
 default = []
