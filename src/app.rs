@@ -235,10 +235,10 @@ impl<'a> HexWidget<'a> {
                         ShuffledPlayout,
                         UctUpdate,
                         SelectRobustChild,
-                        ConstIterationCount::new(10),
+                        ConstIterationCount::new(10_000),
                     );
 
-                    let mut rng = SmallRng::seed_from_u64(123467123321);
+                    let mut rng = SmallRng::from_entropy();
                     let result = mcts.suggest_action(self.game, &mut rng);
                     let action = result
                         .tree
